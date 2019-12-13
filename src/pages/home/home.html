@@ -1,0 +1,245 @@
+<ion-header>
+  <ion-navbar hideBackButton color="primary">
+    <ion-buttons left style="display: flex;">
+      <button (click)="openMenu()" style="background: transparent;">
+        <img src="assets/imgs/ic_ham.png" style="width: 25px;"/>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons center text-center>
+      <button (click)="openMenu()" style="background: transparent;" text-center>
+        <div class="flex_center_content" style="margin-left: -30px;">
+          <img src="assets/imgs/logo.png" style="width: 20px;">
+          <span text-color="title_white"
+                style="color: #FFFFFF;font-weight: 900;font-size: 17px;margin-top: 2px;margin-left: 7px;font-family: nexa_bold;">TUMGO</span>
+        </div>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons right>
+      <button style="background: transparent;" text-center>
+        <div class="flex_center_content" (click)="openNotification()">
+          <img src="assets/imgs/ic_notification.png" style="width: 20px;">
+        </div>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item *ngFor="let lst of list_arr;let i=index;" no-padding no-margin>
+    <ion-row>
+      <ion-col col-5>
+        <div class="flex_center_content" style="width: 100%;height: 100%;">
+          <div style="width: 90%;">
+            <div style="width: 90%;height: 90px;background-color: #BDBDBD;border-radius: 10px;">
+
+            </div>
+
+            <div style="width: 90%;display: flex;margin-top: 10px;">
+              <div style="width:50%;background-color: #4e51a3;padding-top: 3px;padding-bottom: 3px;margin-right: 2px;" (click)="openTicket(i)">
+                <p style="color: #FFFFFF;font-family: nexa_bold;font-size: 9px;">Accept</p>
+              </div>
+              <div style="width:50%;background-color: #4e51a3;padding-top: 3px;padding-bottom: 3px;margin-left: 2px;" (click)="cancelTicket()">
+                <p style="color: #FFFFFF;font-family: nexa_bold;font-size: 9px;">Reject</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col col-7 (click)="openTicket(i)">
+        <p style="font-family: nexa_bold;">06 Jan 2019 at 06:27 PM</p>
+        <div style="display: flex;">
+          <div style="width: 10%;padding-left: 5px;">
+            <div class="flex_center_content" style="height: 5px;margin-top: 3px;">
+              <div style="height: 5px;width:1px;background-color: #757575;"></div>
+            </div>
+            <div class="flex_center_content" style="height: 5px;margin-top: 3px;">
+              <div style="height: 5px;width:1px;background-color: #757575;"></div>
+            </div>
+            <div class="flex_center_content" style="height: 5px;margin-top: 3px;">
+              <div style="height: 5px;width:1px;background-color: #757575;"></div>
+            </div>
+            <div class="flex_center_content" style="height: 5px;margin-top: 3px;">
+              <div style="height: 5px;width:1px;background-color: #757575;"></div>
+            </div>
+            <div class="flex_center_content" style="height: 5px;margin-top: 7px;">
+              <img src="assets/imgs/ic_marker_arrow.png" style="width: 25px;"/>
+            </div>
+            <div class="flex_center_content" style="height: 5px;margin-top: 3px;">
+              <div style="height: 5px;width:1px;background-color: #757575;"></div>
+            </div>
+
+            <div class="flex_center_content" style="height: 5px;margin-top: 3px;">
+              <div style="height: 5px;width:1px;background-color: #757575;"></div>
+            </div>
+
+            <div class="flex_center_content" style="height: 5px;margin-top: 3px;">
+              <div style="height: 5px;width:1px;background-color: #757575;"></div>
+            </div>
+            <div class="flex_center_content" style="height: 5px;margin-top: 7px;">
+              <img src="assets/imgs/ic_gps_marker.png" style="width: 25px;"/>
+            </div>
+
+            <div class="flex_center_content" style="height: 5px;margin-top: 3px;">
+              <div style="height: 5px;width:1px;background-color: #757575;"></div>
+            </div>
+            <div class="flex_center_content" style="height: 5px;margin-top: 3px;">
+              <div style="height: 5px;width:1px;background-color: #757575;"></div>
+            </div>
+            <div class="flex_center_content" style="height: 5px;margin-top: 3px;">
+              <div style="height: 5px;width:1px;background-color: #757575;"></div>
+            </div>
+            <div class="flex_center_content" style="height: 5px;margin-top: 3px;">
+              <div style="height: 5px;width:1px;background-color: #757575;"></div>
+            </div>
+            <div class="flex_center_content" style="height: 5px;margin-top: 3px;">
+              <div style="height: 5px;width:1px;background-color: #757575;"></div>
+            </div>
+          </div>
+          <div style="width: 90%;padding-left: 5px;">
+            <p style="color: #BDBDBD;font-size:11px;font-family: nexa_bold;margin-top: 7px;">Vehicle Number</p>
+            <p style="color: #757575;font-size:11px;margin-top:3px;font-family: nexa_bold;">RJ 14 BJ 7214</p>
+            <p style="color: #BDBDBD;font-size:11px;margin-top:3px;font-family: nexa_bold;">Pickup Location</p>
+            <p text-wrap style="color: #757575;font-size:11px;margin-top:3px;font-family: nexa_bold;">Apex Circle,
+              Jagatpura, Malviya
+              Nagar, Jaipur, India</p>
+            <p style="color: #BDBDBD;font-size:11px;margin-top:3px;font-family: nexa_bold;">Drop Off Location</p>
+            <p text-wrap style="color: #757575;font-size:11px;margin-top:3px;font-family: nexa_bold;">Apex Circle,
+              Jagatpura, Malviya
+              Nagar, Jaipur, India</p>
+            <p style="color: #BDBDBD;font-size:11px;margin-top:3px;font-family: nexa_bold;">Status</p>
+            <p text-wrap style="color: #757575;font-size:11px;margin-top:3px;font-family: nexa_bold;">Waiting Towing</p>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <!--  <ion-item no-padding no-margin (click)="openTicket()">-->
+  <!--    <ion-row>-->
+  <!--      <ion-col col-3>-->
+  <!--        <div class="flex_center_content" style="width: 100%;height: 100%;">-->
+  <!--          <div style="width: 90%;height: 90%;background-color: #BDBDBD;">-->
+
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </ion-col>-->
+  <!--      <ion-col col-9>-->
+  <!--        <p style="font-weight: 900;color: #000000;font-size: 15px;font-family: nexa_bold;">Mercedes-Benz GLE</p>-->
+  <!--        <p style="font-family: nexa_bold;">RJ 14 BE 7214</p>-->
+  <!--        <p style="font-family: nexa_bold;">20-10-2019</p>-->
+  <!--        <p style="font-family: nexa_bold;">Pratapnagar, Jaipur, India</p>-->
+  <!--        <p style="color: #b90100;font-weight: bolder;font-family: nexa_bold;">CLOSED</p>-->
+  <!--      </ion-col>-->
+  <!--    </ion-row>-->
+  <!--  </ion-item>-->
+  <!--  <ion-item no-padding no-margin (click)="openTicket()">-->
+  <!--    <ion-row>-->
+  <!--      <ion-col col-3>-->
+  <!--        <div class="flex_center_content" style="width: 100%;height: 100%;">-->
+  <!--          <div style="width: 90%;height: 90%;background-color: #BDBDBD;">-->
+
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </ion-col>-->
+  <!--      <ion-col col-9>-->
+  <!--        <p style="font-weight: 900;color: #000000;font-size: 15px;font-family: nexa_bold;">Mercedes-Benz GLE</p>-->
+  <!--        <p style="font-family: nexa_bold;">RJ 14 BE 7214</p>-->
+  <!--        <p style="font-family: nexa_bold;">20-10-2019</p>-->
+  <!--        <p style="font-family: nexa_bold;">Pratapnagar, Jaipur, India</p>-->
+  <!--        <p style="color: #21b94e;font-weight: bolder;font-family: nexa_bold;">OPEN</p>-->
+  <!--      </ion-col>-->
+  <!--    </ion-row>-->
+  <!--  </ion-item>-->
+  <!--  <ion-item no-padding no-margin (click)="openTicket()">-->
+  <!--    <ion-row>-->
+  <!--      <ion-col col-3>-->
+  <!--        <div class="flex_center_content" style="width: 100%;height: 100%;">-->
+  <!--          <div style="width: 90%;height: 90%;background-color: #BDBDBD;">-->
+
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </ion-col>-->
+  <!--      <ion-col col-9>-->
+  <!--        <p style="font-weight: 900;color: #000000;font-size: 15px;font-family: nexa_bold;">Mercedes-Benz GLE</p>-->
+  <!--        <p style="font-family: nexa_bold;">RJ 14 BE 7214</p>-->
+  <!--        <p style="font-family: nexa_bold;">20-10-2019</p>-->
+  <!--        <p style="font-family: nexa_bold;">Pratapnagar, Jaipur, India</p>-->
+  <!--        <p style="color: #b90100;font-weight: bolder;font-family: nexa_bold;">CLOSED</p>-->
+  <!--      </ion-col>-->
+  <!--    </ion-row>-->
+  <!--  </ion-item>-->
+  <!--  <ion-item no-padding no-margin (click)="openTicket()">-->
+  <!--    <ion-row>-->
+  <!--      <ion-col col-3>-->
+  <!--        <div class="flex_center_content" style="width: 100%;height: 100%;">-->
+  <!--          <div style="width: 90%;height: 90%;background-color: #BDBDBD;">-->
+
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </ion-col>-->
+  <!--      <ion-col col-9>-->
+  <!--        <p style="font-weight: 900;color: #000000;font-size: 15px;font-family: nexa_bold;">Mercedes-Benz GLE</p>-->
+  <!--        <p style="font-family: nexa_bold;">RJ 14 BE 7214</p>-->
+  <!--        <p style="font-family: nexa_bold;">20-10-2019</p>-->
+  <!--        <p style="font-family: nexa_bold;">Pratapnagar, Jaipur, India</p>-->
+  <!--        <p style="color: #21b94e;font-weight: bolder;font-family: nexa_bold;">OPEN</p>-->
+  <!--      </ion-col>-->
+  <!--    </ion-row>-->
+  <!--  </ion-item>-->
+  <!--  <ion-item no-padding no-margin (click)="openTicket()">-->
+  <!--    <ion-row>-->
+  <!--      <ion-col col-3>-->
+  <!--        <div class="flex_center_content" style="width: 100%;height: 100%;">-->
+  <!--          <div style="width: 90%;height: 90%;background-color: #BDBDBD;">-->
+
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </ion-col>-->
+  <!--      <ion-col col-9>-->
+  <!--        <p style="font-weight: 900;color: #000000;font-size: 15px;font-family: nexa_bold;">Mercedes-Benz GLE</p>-->
+  <!--        <p style="font-family: nexa_bold;">RJ 14 BE 7214</p>-->
+  <!--        <p style="font-family: nexa_bold;">20-10-2019</p>-->
+  <!--        <p style="font-family: nexa_bold;">Pratapnagar, Jaipur, India</p>-->
+  <!--        <p style="color: #b90100;font-weight: bolder;font-family: nexa_bold;">CLOSED</p>-->
+  <!--      </ion-col>-->
+  <!--    </ion-row>-->
+  <!--  </ion-item>-->
+  <!--  <ion-item no-padding no-margin (click)="openTicket()">-->
+  <!--    <ion-row>-->
+  <!--      <ion-col col-3>-->
+  <!--        <div class="flex_center_content" style="width: 100%;height: 100%;">-->
+  <!--          <div style="width: 90%;height: 90%;background-color: #BDBDBD;">-->
+
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </ion-col>-->
+  <!--      <ion-col col-9>-->
+  <!--        <p style="font-weight: 900;color: #000000;font-size: 15px;font-family: nexa_bold;">Mercedes-Benz GLE</p>-->
+  <!--        <p style="font-family: nexa_bold;">RJ 14 BE 7214</p>-->
+  <!--        <p style="font-family: nexa_bold;">20-10-2019</p>-->
+  <!--        <p style="font-family: nexa_bold;">Pratapnagar, Jaipur, India</p>-->
+  <!--        <p style="color: #21b94e;font-weight: bolder;font-family: nexa_bold;">OPEN</p>-->
+  <!--      </ion-col>-->
+  <!--    </ion-row>-->
+  <!--  </ion-item>-->
+
+
+  <ion-fab right bottom (click)="addOccurance()">
+    <button ion-fab large color="primary">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>
+
+
+<ion-footer no-padding>
+  <div class="flex_center_content" style="background-color: #4e51a3;height: 45px;display: flex;" (click)="logoutUser()">
+    <img src="assets/imgs/ic_logout.png" style="width: 17px;">
+    <p
+      style="color: #FFFFFF;font-weight: 900;font-size: 17px;font-family: nexa_bold;padding-top: 0px;margin-left: 10px;">
+      LOGOUT</p>
+  </div>
+</ion-footer>
